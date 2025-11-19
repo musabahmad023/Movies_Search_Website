@@ -63,9 +63,78 @@ This repository does not include a formal license. Add one if you plan to publis
 
 ---
 
-If you'd like, I can also:
-- add a small screenshot or GIF to `README.md`
-- include example env file and Firebase setup steps
-- add a `CONTRIBUTING.md` with development guidelines
 
-Tell me which of these you'd like next.
+
+## APIs Used & Endpoints
+
+- **OpenRouter / OpenAI-compatible (AI assistant)**
+	- Endpoint: `POST https://openrouter.ai/api/v1/chat/completions`
+	- Used by: `src/services/ai.js` via `askAI(prompt)`
+	- Notes: the client reads the API key from `import.meta.env.VITE_API_URL` (set this in a local `.env` file). The code calls the `openai/gpt-oss-20b:free` model by default.
+
+- **Firebase / Firestore (optional, feedback storage)**
+	- Used by: `src/services/firebase.js`
+	- Collection: `feedback` (written by `addFeedback(name, message)`)
+	- Notes: the file currently contains a Firebase config object. Replace it with your own Firebase project's config or update the file to read values from environment variables before enabling Firestore features.
+
+- **Local dataset**
+	- Path: `src/data/movies.json`
+	- Usage: static dataset used for browsing and search inside the app (no external network call).
+
+## Setup & Run Instructions
+
+1. Install dependencies
+
+```powershell
+npm install
+```
+
+2. (Optional) Add API keys / configuration
+
+- Create a `.env` or `.env.local` file in the project root to provide your AI API key for the assistant. Example:
+
+```text
+# .env.local
+VITE_API_URL=your_openrouter_api_key_here
+```
+
+- If you want to enable Firebase features, replace the `firebaseConfig` object in `src/services/firebase.js` with your project's credentials from the Firebase console (or modify the file to read from env vars).
+
+3. Start the dev server
+
+```powershell
+npm run dev
+```
+
+4. Build for production
+
+```powershell
+npm run build
+npm run preview
+```
+
+5. Linting
+
+```powershell
+npm run lint
+```
+
+## Project APIs (helpers in code)
+
+- `askAI(prompt)` — in `src/services/ai.js` — sends the prompt to the OpenRouter chat completions endpoint and returns the assistant's reply.
+- `addFeedback(name, message)` — in `src/services/firebase.js` — adds a document to the `feedback` collection in Firestore.
+
+## Contributors & Member Contributions
+
+```powershell
+git shortlog -sn --no-merges
+```
+
+Template (replace with real names and contributions):
+
+- Musab Ahmad (`fashi ud din`) — Project lead, React app structure,AI integration (`src/services/ai.js`), `AiChat.jsx` component.
+
+- Muhammad Hussain  — Search implementation, `MovieCard` layout, styling adjustments.
+
+- musab Ahmad — Firebase integration, feedback form (`FeedbackForm.jsx`). ,routing, components (`Header`, `MovieGrid`, `MoviePage`)
+---
