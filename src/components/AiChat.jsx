@@ -44,7 +44,7 @@ export default function AiChat() {
 
             {error && <div className="mt-2 text-red-400">{error}</div>}
             {response && <pre className={`mt-2 whitespace-pre-wrap text-sm p-3 rounded transition-colors ${theme === 'dark' ? 'bg-black/50 text-gray-100' : 'bg-gray-100 text-gray-900'
-                }`}>{response}</pre>}
+                } h-65 overflow-auto`}>{response}</pre>}
         </div>
     )
 }

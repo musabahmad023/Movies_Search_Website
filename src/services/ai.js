@@ -13,7 +13,7 @@ export async function askAI(prompt) {
             headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${openaiKey}` },
             body: JSON.stringify({ model: 'openai/gpt-oss-20b:free', messages: [{ role: 'user', content: prompt } ] })
         })
-        if (!res.ok) throw new Error('OpenAI request failed');
+        if (!res.ok) console.log('OpenAI request failed', res);
         console.log("The Response is: ", res);
         const data = await res.json()
         console.log("The Response is: ", data);
