@@ -1,16 +1,71 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Movies Search Website
 
-Currently, two official plugins are available:
+A responsive React application built with Vite that lets users browse and search a collection of movies. It includes client-side routing, a simple Firebase integration for optional features, and an AI chat helper for conversational search.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Live Demo:** (local) run the dev server and open http://localhost:5173
 
-## React Compiler
+**Stack:** React, Vite, Tailwind (optional), React Router, Firebase
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Key Features**
+- **Search:** Client-side movie search and filtering using local `movies.json`.
+- **Movie Pages:** Individual movie detail pages using React Router.
+- **AI Chat:** Lightweight AI assistant UI in `src/components/AiChat.jsx` (service at `src/services/ai.js`).
+- **Responsive UI:** Grid/list views with `MovieGrid` and `MovieCard` components.
 
-## Expanding the ESLint configuration
+## Prerequisites
+- Node.js (LTS recommended)
+- npm (bundled with Node)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Install
+Open a terminal in the project root and run:
+
+```powershell
+npm install
+```
+
+## Available Scripts
+- `npm run dev` — Start the Vite dev server
+- `npm run build` — Build the production bundle
+- `npm run preview` — Preview the production build locally
+- `npm run lint` — Run ESLint across the codebase
+
+Example (PowerShell):
+
+```powershell
+npm run dev
+```
+
+## Project Structure (important files)
+- `index.html` — App entry HTML
+- `src/main.jsx` — React entry point
+- `src/App.jsx` — Top-level app component
+- `src/components/` — All React components (e.g. `MovieGrid.jsx`, `MovieCard.jsx`, `MoviePage.jsx`, `AiChat.jsx`)
+- `src/data/movies.json` — Local movie dataset used for browsing/searching
+- `src/services/firebase.js` — Firebase configuration and helpers
+- `src/services/ai.js` — AI helper integration used by `AiChat.jsx`
+
+## Notes & Tips
+- The app ships with a local dataset in `src/data/movies.json` — you can replace or extend it as needed.
+- If you want to enable Firebase features, add your Firebase config in `src/services/firebase.js` and follow Firebase setup docs.
+- Tailwind is included as a dependency; adapt or replace styling in `src/assets/custom.css` and `src/index.css`.
+
+## Contributing
+Feel free to open issues or submit pull requests. For quick changes:
+
+```powershell
+git checkout -b my-feature
+npm run dev
+```
+
+## License
+This repository does not include a formal license. Add one if you plan to publish or share widely.
+
+---
+
+If you'd like, I can also:
+- add a small screenshot or GIF to `README.md`
+- include example env file and Firebase setup steps
+- add a `CONTRIBUTING.md` with development guidelines
+
+Tell me which of these you'd like next.

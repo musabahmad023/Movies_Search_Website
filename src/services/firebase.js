@@ -24,7 +24,10 @@ try {
 
 export async function addFeedback(name, message) {
     if (!db) throw new Error('Firestore not initialized')
+    console.log("Adding feedback: ", name, message);
     const col = collection(db, 'feedback')
+    console.log("Collection: ", col);
     const doc = await addDoc(col, { name, message, createdAt: Timestamp.now() })
+    console.log("Doc: ", doc);
     return doc.id
 }

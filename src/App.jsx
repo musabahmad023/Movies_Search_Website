@@ -1,6 +1,7 @@
 import './App.css'
 import { BrowserRouter } from 'react-router-dom'
 import RouterView from './router/RouterView'
+import { ThemeProvider } from './context/ThemeContext'
 import { useEffect, useState } from 'react'
 
 function App() {
@@ -36,9 +37,11 @@ function App() {
   const filtered = movies.filter((m) => m.title.toLowerCase().includes(search.toLowerCase()))
 
   return (
-    <BrowserRouter>
-      <RouterView movies={filtered} rawMovies={movies} setSearch={setSearch} search={search} externalData={externalData} loading={loading} error={error} />
-    </BrowserRouter>
+    <ThemeProvider>
+      <BrowserRouter>
+        <RouterView movies={filtered} rawMovies={movies} setSearch={setSearch} search={search} externalData={externalData} loading={loading} error={error} />
+      </BrowserRouter>
+    </ThemeProvider>
   )
 }
 
