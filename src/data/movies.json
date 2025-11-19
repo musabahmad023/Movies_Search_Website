@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "title": "Inception",
+        "img": "https://m.media-amazon.com/images/M/MV5BMjExMjkwNTQ0Nl5BMl5BanBnXkFtZTcwNTY0OTk1Mw@@._V1_.jpg",
+        "description": "A skilled thief is given a chance at redemption if he can successfully perform inception."
+    },
+    {
+        "id": 2,
+        "title": "Interstellar",
+        "img": "https://lh5.googleusercontent.com/proxy/_kxzNJv_lX5CzxgZW5U60ZXViOILWwXddSzxnSaexcqhaPoa8C1RCk0ZIF5AqkY0mG1ovZjGkSAY2CSSncjdq3l_nN8xXsnrZKxH2MWYqdZ9hJCbKS9f5cwJwiKYOmAooK3tVp3G",
+        "description": "Explorers travel through a wormhole in space in an attempt to ensure humanity's survival."
+    },
+    {
+        "id": 3,
+        "title": "The Dark Knight",
+        "img": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg",
+        "description": "Batman faces the Joker, a criminal mastermind who wants to plunge Gotham into anarchy."
+    },
+    {
+        "id": 4,
+        "title": "Parasite",
+        "img": "https://s3.amazonaws.com/nightjarprod/content/uploads/sites/130/2024/03/29150816/7IiTTgloJzvGI1TAYymCfbfl3vT-scaled.jpg",
+        "description": "A darkly comedic thriller about class struggle and social infiltration."
+    },
+    {
+        "id": 5,
+        "title": "Joker",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8gT1TURwTlCgu1tYXk0Tyg3UkRuu7DlYVkg&s",
+        "description": "A gritty character study of the man who becomes the Joker."
+    },
+    {
+        "id": 6,
+        "title": "Avengers: Endgame",
+        "img": "https://m.media-amazon.com/images/I/81ExhpBEbHL._AC_SY679_.jpg",
+        "description": "The Avengers assemble once more to reverse the damage caused by Thanos."
+    }
+]
